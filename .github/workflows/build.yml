@@ -19,5 +19,4 @@ jobs:
       - uses: vexxhost/docker-atmosphere/.github/actions/build-image@main
         with:
           image-name: python-openstackclient
-          base-image-tag: zed
           push: ${{ github.event_name != 'pull_request' }}
