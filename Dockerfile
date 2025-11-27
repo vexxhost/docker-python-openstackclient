@@ -17,8 +17,8 @@ uv pip install \
         python-neutronclient \
         python-octaviaclient \
         python-openstackclient \
-        python-swiftclient \
-        tap-as-a-service
+        python-senlinclient \
+        python-swiftclient
 EOF
 
 FROM ghcr.io/vexxhost/python-base:main@sha256:4ab6c0c1a31e169d3b158e8ad70963b91ea933ae63a279640ded5d37e92815b7
