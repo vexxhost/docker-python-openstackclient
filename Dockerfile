@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Atmosphere-Rebuild-Time: 2024-06-26T17:38:39Z
 
-FROM ghcr.io/vexxhost/openstack-venv-builder:2023.2@sha256:d91381556a0a62af1cdda8ce206a9f3f5c7e30ffa530780f3dd15b1ada713218 AS build
+FROM ghcr.io/vexxhost/openstack-venv-builder:2023.2@sha256:d575a3be01744e04192bee5175fa6154bd8c1b535e22f8299d4730dd04c6e345 AS build
 RUN <<EOF bash -xe
 uv pip install \
     --constraint /upper-constraints.txt \
@@ -20,7 +20,7 @@ uv pip install \
         python-swiftclient
 EOF
 
-FROM ghcr.io/vexxhost/python-base:2023.2@sha256:bb662f055869cb3c39de3f61a86ddf0cecea90c4a7f55de506d645c29e001632
+FROM ghcr.io/vexxhost/python-base:2023.2@sha256:b3f9f6caee520ebccc8d430bb3711b99a1cdd7f9f250284c568f482f3d9b58bd
 COPY --from=build --link /var/lib/openstack /var/lib/openstack
 
 # NOTE(mnaser): The Magnum client relies on the SHELL environment variable
