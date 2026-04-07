@@ -20,7 +20,7 @@ uv pip install \
         python-swiftclient
 EOF
 
-FROM ghcr.io/vexxhost/python-base:2024.1@sha256:d0c8015ebefee3187823b3438f2adc9924791fdc3a7c1e63e24b3902a0ad40fc
+FROM ghcr.io/vexxhost/python-base:2024.1@sha256:bd193f410ba3d033c85cca315e103df715b1dee930fdda40498bdee24a12dca5
 COPY --from=build --link /var/lib/openstack /var/lib/openstack
 
 # NOTE(mnaser): The Magnum client relies on the SHELL environment variable
