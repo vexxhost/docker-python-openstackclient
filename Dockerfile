@@ -21,7 +21,7 @@ uv pip install \
         tap-as-a-service
 EOF
 
-FROM ghcr.io/vexxhost/python-base:2025.1@sha256:592cbf8c93a8dd3d86d38c770ac7ab0e9afc23fbe3f3da3e507fed8bd0392db0
+FROM ghcr.io/vexxhost/python-base:2025.1@sha256:024cd9f72ebff3ac582c0208667ec29ddba30ea21adda689b6daa1505af8879e
 COPY --from=build --link /var/lib/openstack /var/lib/openstack
 
 # NOTE(mnaser): The Magnum client relies on the SHELL environment variable
