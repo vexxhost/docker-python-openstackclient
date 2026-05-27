@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Atmosphere-Rebuild-Time: 2024-06-25T22:49:25Z
 
-FROM ghcr.io/vexxhost/openstack-venv-builder:2025.1@sha256:23b162d7b21343837dd8894aa29eeec97ce45bf1a0d43ccb3ab5c26f12185b6c AS build
+FROM ghcr.io/vexxhost/openstack-venv-builder:2025.1@sha256:2ecb195d8e27a05513e0d854e4627b87d2e9169cf150c3a5e9885605fb84495f AS build
 RUN <<EOF bash -xe
 uv pip install \
     --constraint /upper-constraints.txt \
@@ -21,7 +21,7 @@ uv pip install \
         tap-as-a-service
 EOF
 
-FROM ghcr.io/vexxhost/python-base:2025.1@sha256:19173c6f26d983d07e19126e5d7ca38c9f6b9c28e3b0a86bb98db57abd288310
+FROM ghcr.io/vexxhost/python-base:2025.1@sha256:8c0345653c90f1d91d2ee7bb36f63752366c8610562b59ef2679455b03d78de8
 COPY --from=build --link /var/lib/openstack /var/lib/openstack
 
 # NOTE(mnaser): The Magnum client relies on the SHELL environment variable
