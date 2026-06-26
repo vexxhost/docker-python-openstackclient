@@ -25,7 +25,7 @@ jobs:
         with:
           egress-policy: audit
 
-      - uses: vexxhost/docker-atmosphere/.github/actions/build-image@ee412cafe33e0d7d8b3bc7d0ca64c9f155e293c7 # main
+      - uses: vexxhost/docker-atmosphere/.github/actions/build-image@d763fd8920390074628431db771a56ab4f7aa8e2 # main
         with:
           image-name: python-openstackclient
           push: ${{ github.event_name != 'pull_request' }}
